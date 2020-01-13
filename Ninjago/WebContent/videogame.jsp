@@ -10,10 +10,9 @@
 </head>
 <body>
 <div class="logo" >
-	<img src= "lib/logo.png" 
-        alt = "Ninjago Logo" />
+	<a href="index.jsp"><img src= "lib/logo.png" alt = "Ninjago Logo"/></a>
 </div>
-<% 
+<%  // greets new plays and invites to play
 out.println("Hej " + request.getParameter("playername")+", vilken ninja saknas?");
 String user = request.getParameter("playername");
 %>

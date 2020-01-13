@@ -7,6 +7,7 @@ let userAnswer = [];
 let num = 0;
 let ninjas =[1,2,3,4,5,6];
 
+/* Call checkAnswer when pressing a ninja */
 document.getElementById("1").addEventListener("click", function(){
 	checkAnswer('1');
 });
@@ -25,7 +26,7 @@ document.getElementById("5").addEventListener("click", function(){
 document.getElementById("6").addEventListener("click", function(){
 	checkAnswer('6');
 });
-
+/* Load the first rounds of ninjas */
 document.addEventListener('DOMContentLoaded', function() {
 	
 	ninjas = [1, 2, 3, 4, 5, 6].shuffle();
@@ -51,15 +52,15 @@ function checkAnswer(val) {
     	document.getElementById("55").style.backgroundImage = 'url("lib/' + ninjas[4] + '.png")';
     	num = num + 1; 
     } else{
-    	alert("Game Over");
-
-    	document.getElementById('hidden_userAnswer').value = userAnswer;
-    	document.getElementById('hidden_correctAnswer').value = correctAnswer;
-    	document.getElementById('submit').setAttribute('style', 'display:block');
-    	document.getElementById('submit').setAttribute('style', 'text-align:center');
-    	//num = 0;
-    ;
-    }
+   		// Do nothing
+    }	// ends game and reveals the result button
+    if (num == 5) {
+			alert("Game Over");
+	    	document.getElementById('hidden_userAnswer').value = userAnswer;
+	    	document.getElementById('hidden_correctAnswer').value = correctAnswer;
+	    	document.getElementById('submit').setAttribute('style', 'display:block');
+	    	document.getElementById('submit').setAttribute('style', 'text-align:center');
+			} ;
 }
 // randomize the ninja array
 Array.prototype.shuffle = function() {
